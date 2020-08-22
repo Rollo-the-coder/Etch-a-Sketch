@@ -1,4 +1,5 @@
 var grid = document.createElement("div");
+const gameBoard = document.querySelector("#gameBoard");
 
 function createRow() {
   var element = document.getElementById("gameBoard");
@@ -32,6 +33,13 @@ function clearGrid() {
   }
 }
 
+function resizeGrid() {
+  clearGrid();
+  gameBoard.innerHTML = "";
+  let newSize = prompt("How many squares on each side of your Etch a Sketch?", "16");
+  createGrid(newSize);
+}
+
 function createGrid(numRows) {
   //var grid = document.createElement("div");
   grid.setAttribute("name", "Grid");
@@ -49,90 +57,3 @@ function createGrid(numRows) {
 
 createGrid(16);
 
- /*
- const container = document.getElementById("container");
-  let randyRGB = randomRGB();
-
-  function randomRGB() {
-    var r = Math.floor(Math.random() * 256);
-    var g = Math.floor(Math.random() * 256);
-    var b = Math.floor(Math.random() * 256);
-    var rgbColor ="rgb(" + r + "," + g + "," + b + ")";
-    console.log(rgbColor);
-    return rgbColor;
-}
-  function makeRows(rows, cols) {
-      container.style.setProperty('grid-rows', rows);
-      container.style.setProperty('grid-cols', cols);
-      for (let c = 0; c < (rows * cols); c++) {
-          let cell = document.createElement("div");
-          
-          cell.innerText = (c + 1);
-          cell.classList.add("griditem");
-         griditem.setAttribute("onmouseover", randomRGB())
-         cell.appendChild(griditem);
-          container.appendChild(cell);
-          
-      };
-      
-  };
-
-  /*
-  griditems = document.querySelectorAll(".griditem")
-
-  function addHover() {
-    griditems.forEach((griditem) => {
-      griditem.addEventListener("mouseover", function (event) {
-        event.target.classList.add("hover");
-      })
-    })
-  }
-
-/*
-
-function test() {
-  var mytest = document.getElementById("tester")
-  var cells = document.createElement("div")
-  cells.setAttribute()
-
-  mytest.appendChild(cells);
-
-}
-
-
-/*
-
-
-
-document.getElementsByClassName("griditem").addEventListener("mouseover", mouseOver);
-document.getElementsByClassName("griditem").addEventListener("mouseout", mouseOut);
-
-function mouseOver() {  
-  document.getElementsByClassName("griditem").style.background = "red";
-}
-
-function mouseOut() {
-  document.getElementsById("container").style.background = "blue";
-}
-  
-
-*/
-
-  
-  /*
-  document.getElementByClassName("grid-item").addEventListener("mouseenter", mouseEnter);
-  document.getElementByClassName("grid-item").addEventListener("mouseleave", mouseLeave);
-  
-  function mouseEnter() {
-    grid-item.style.background = randomRGB();
-  }
-  
-
-
-
- 
-  
-  console.log('hello');
-  makeRows(16, 16);
-
-   */
